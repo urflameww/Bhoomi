@@ -8,16 +8,16 @@ $pass = Read-Host "Enter Access Password"
 if ($pass -eq "Dinesh") {
     Write-Host "[+] Authentication Successful." -ForegroundColor Green
     
-    # 1. Pre-install dependencies so Python doesn't have to
-    Write-Host "[*] Checking environment..." -ForegroundColor Gray
+    # 1. Pre-install dependencies
     python -m pip install requests colorama urllib3 --quiet
 
-    # 2. Fetch the Engine
+    # 2. Fetch the Engine (Using your permanent Raw link)
     $url = "https://gist.githubusercontent.com/urflameww/e0685a4f3ab6325dceda596f7f45d611/raw/Bhoomi.py"
     $code = (New-Object Net.WebClient).DownloadString($url)
     
-    # 3. Launch directly
-    $code | python -
+    # 3. Launch using the "Command" flag instead of a Pipe
+    # This keeps the input() function working!
+    python -c "$code"
 } else {
     Write-Host "[-] Access Denied." -ForegroundColor Red
     Start-Sleep -Seconds 2
