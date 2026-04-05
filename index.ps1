@@ -22,6 +22,6 @@ if ($pass -eq "Dinesh") {
     # 4. Execute using a clean, one-line command
     python -c "import base64; exec(base64.b64decode('$encoded').decode('utf-8'))"
 } else {
-    Write-Host "[-] Access Denied Nice try Diddy." -ForegroundColor Red
+    Write-Host "[-] Access Denied "Nice try Diddy"." -ForegroundColor Red
     Start-Sleep -Seconds 2
 }
